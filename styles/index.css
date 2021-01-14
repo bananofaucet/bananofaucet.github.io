@@ -1,46 +1,51 @@
 @font-face {
-    font-family: BAN;
-    src: url(/fonts/BAN-R.ttf);
+  font-family: BAN;
+  src: url(/fonts/BAN-R.ttf);
 }
+
 @font-face {
   font-family: OPM-Light;
   src: url(/fonts/OverpassMono-Regular.ttf);
 }
-html, body{
+
+html, body {
   padding: 0;
   margin: 0;
 }
-@-ms-viewport{
+
+@-ms-viewport {
   width: device-width;
   initial-scale: 1;
-  maximum-scale: 1; 
+  maximum-scale: 1;
   user-scalable: 0;
 }
 
-
-header{
-    font-family: BAN;
-    background-color: #2A2A2E;
-    border-style: solid;
-    border-color: #2A2A2E;
+header {
+  font-family: BAN;
+  background-color: #2A2A2E;
+  border-style: solid;
+  border-color: #2A2A2E;
 }
 
-#logo{
+#logo {
   width: auto;
   height: 2.188rem;
   display: inline;
 }
-#title{
+
+#title {
   padding-left: 0.313rem;
   color: #FBDD11;
   display: inline;
   font-size: 2.5rem;
 }
-#hdr{
+
+#hdr {
   padding-top: 1.25rem;
-  padding-bottom: 1.25rem;  
+  padding-bottom: 1.25rem;
 }
-#addr{
+
+#addr {
   font-family: OPM-Light;
   padding-left: 0.938rem;
   font-size: 0.938rem;
@@ -50,7 +55,8 @@ header{
   overflow: hidden;
   text-overflow: ellipsis;
 }
-footer{
+
+footer {
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -58,7 +64,8 @@ footer{
   color: #FBDD11;
   z-index: -1;
 }
-#sup{
+
+#sup {
   font-family: BAN;
   float: left;
   font-size: 1.063rem;
@@ -66,7 +73,8 @@ footer{
   width: 100%;
   padding-bottom: 0.313rem;
 }
-#ftr{
+
+#ftr {
   padding-bottom: 0.625rem;
   padding-top: 0.625rem;
   margin: auto;
@@ -74,85 +82,104 @@ footer{
   width: 100%;
 }
 
-.g-recaptcha{
+.g-recaptcha {
   z-index: -1;
   display: inline-block;
 }
-#reddit{
+
+#reddit {
   font-family: BAN;
 }
-.inp{
+
+.inp {
   font-family: OPM-Light;
   width: 18.313rem;
 }
-#pick{
+
+#pick {
   font-family: BAN;
-  
 }
-.option{
+
+.option {
   font-family: BAN;
   width: 18.75rem;
 }
-#cap{
+
+#cap {
   padding-top: 0.625rem;
 }
+
 .forms {
   padding-left: 0px;
 }
-.o{
+
+.o {
   padding-left: 3.125rem;
   padding-top: 3.125rem;
 }
-#btnDIV{
+
+#btnDIV {
   padding-top: 1.25rem;
 }
-#btn{
+
+#btn {
   width: 18.75rem;
 }
-#lbl{
-  display:block;
+
+#lbl {
+  display: block;
 }
-hr{
+
+hr {
   margin: auto;
   border-top: 0.313rem solid #FBDD11;
   border-bottom: 0.313rem solid #FBDD11;
   padding: 0;
 }
-.center{
+
+.center {
   text-align: center;
   margin: auto;
 }
-#status{
+
+#status {
   padding-top: 3.125rem;
   font-size: 1.875rem;
   font-family: BAN;
   position: fixed;
   width: 100%;
 }
-#info{
+
+#info {
   padding-top: 2.813rem;
   font-family: BAN;
 }
-td,th{
+
+td, th {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
   text-align: center;
   font-size: 1.063rem;
 }
-td{
+
+td {
   font-family: OPM-Light;
 }
-.t{
+
+.t {
   padding-top: 3.125rem;
 }
-#status{
+
+#status {
   padding-top: 7.5rem;
 }
+
 .disabled-element {
   opacity: 0.65;
   pointer-events: none;
 }
-#creeper{
+
+#creeper {
   padding-top: 1.563rem;
   font-family: BAN;
 }

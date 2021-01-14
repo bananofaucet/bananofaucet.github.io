@@ -5,8 +5,8 @@
     <title>BananoFaucet</title>
     <link rel="stylesheet" href="styles/index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-    <meta name="theme-color" content="#4CBF4B"> 
-    <link rel="icon" type="image/png" href="https://banano.cc/assets/logo.png"/>
+    <meta name="theme-color" content="#4CBF4B">
+    <link rel="icon" type="image/png" href="https://banano.cc/assets/logo.png" />
     <meta property="image" content="https://banano.cc/assets/logo.png">
 
 </head>
@@ -27,7 +27,8 @@
             This faucet can be used once every 7 days
         </p>
         <p style="font-family: BAN;">
-            Using this faucet requires a Reddit account with some activity on the banano subreddits and at least 50 karma
+            Using this faucet requires a Reddit account with some activity on the banano subreddits and at least 50
+            karma
         </p>
 
     </div>
@@ -35,7 +36,8 @@
     <div class="t">
         <div class="center">
             <form action="?" method="POST" id="cap">
-                <div class="g-recaptcha" data-sitekey="6LeZ7yYaAAAAAP3ZKDy3Nsn3jLbgQOZWPzUfIcdH" data-callback="verify" id="g-recaptcha">
+                <div class="g-recaptcha" data-sitekey="6LeZ7yYaAAAAAP3ZKDy3Nsn3jLbgQOZWPzUfIcdH" data-callback="verify"
+                    id="g-recaptcha">
                 </div>
                 <br />
             </form>
@@ -59,12 +61,14 @@
                     <td id="infaucet">Loading</td>
                     <td id="reward">Loading</td>
                 </tr>
-        
+
             </table>
             <div class="center" id="creeper">
-                <a href="https://creeper.banano.cc/explorer/account/ban_3jkd1t5rpfw61xzrbmhx1j37uhiggyycgckqft9xrdhwoy49sxr59d6fatd5/history">View on Creeper</a>
+                <a
+                    href="https://creeper.banano.cc/explorer/account/ban_3jkd1t5rpfw61xzrbmhx1j37uhiggyycgckqft9xrdhwoy49sxr59d6fatd5/history">View
+                    on Creeper</a>
             </div>
-            
+
 
         </div>
     </div>
@@ -133,7 +137,7 @@ ${grecaptcha.getResponse()}%0A
 --CODE-END--
 `
             console.log(str);
-            window.location.href = "https://www.reddit.com/message/compose/?to=BananoFaucet&subject=BananoFaucet&message="+str;
+            window.location.href = "https://www.reddit.com/message/compose/?to=BananoFaucet&subject=BananoFaucet&message=" + str;
         }
         else {
             document.getElementById("faddr").disabled = true;
