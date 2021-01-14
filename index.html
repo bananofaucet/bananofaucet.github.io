@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+    <link rel="stylesheet" href="styles/faucet2.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+</head>
+
+<body>
+    <header class="center">
+        <div id="hdr">
+            <img src="images/banano2.svg" id="logo">
+            <h1 id="title">
+                BananoFaucet
+            </h1>
+        </div>
+    </header>
+    <hr>
+    <div id="status" class="center"></div>
+    <div class="center">
+        <p style="font-size: 22.5px; font-family: BAN;">
+            This faucet can be used once every 7 days
+        </p>
+        <p style="font-family: BAN;">
+            Using this faucet requires a Reddit account with some activity on the banano subreddits and at least 50 karma
+        </p>
+
+    </div>
+
+    <div class="t">
+        <div class="center">
+            <form action="?" method="POST" id="cap">
+                <div class="g-recaptcha" data-sitekey="6LeZ7yYaAAAAAP3ZKDy3Nsn3jLbgQOZWPzUfIcdH" data-callback="verify" id="g-recaptcha">
+                </div>
+                <br />
+            </form>
+
+            <div class="forms">
+                <form id="reddit">
+                    <label for="faddr">Banano Address</label><br>
+                    <input type="text" id="faddr" class="inp" disabled><br>
+                </form>
+
+                <div id="btnDIV"><button type="button" id="btn" onclick="send()" disabled>Send</button></div>
+            </div>
+        </div>
+        <div class="center">
+            <table id="info" class="center">
+                <tr>
+                    <th>Faucet balance</th>
+                    <th>Faucet reward</th>
+                </tr>
+                <tr>
+                    <td id="infaucet">Loading</td>
+                    <td id="reward">Loading</td>
+                </tr>
+        
+            </table>
+            <div class="center" id="creeper">
+                <a href="https://creeper.banano.cc/explorer/account/ban_3jkd1t5rpfw61xzrbmhx1j37uhiggyycgckqft9xrdhwoy49sxr59d6fatd5/history">View on Creeper</a>
+            </div>
+            
+
+        </div>
+    </div>
+    <footer class="center">
+        <hr>
+        <div id="ftr">
+            <p id="sup">Created by MiranDaniel | Support me:</p>
+            <br>
+            <p id="addr">ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87</p>
+        </div>
+    </footer>
+</body>
+
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+    var caesarShift = function (str, amount) {
+        if (amount < 0) {
+            return caesarShift(str, amount + 26);
+        }
+
+        var output = "";
+
+        for (var i = 0; i < str.length; i++) {
+            var c = str[i];
+
+            if (c.match(/[a-z]/i)) {
+                var code = str.charCodeAt(i);
+
+                if (code >= 65 && code <= 90) {
+                    c = String.fromCharCode(((code - 65 + amount) % 26) + 65);
+                }
+
+                else if (code >= 97 && code <= 122) {
+                    c = String.fromCharCode(((code - 97 + amount) % 26) + 97);
+                }
+            }
+
+            output += c;
+        }
+
+        return output;
+    };
+    function verify() {
+        if (grecaptcha && grecaptcha.getResponse().length > 0) {
+            if (document.getElementById("status").innerHTML != "This faucet is currently dry") {
+                document.getElementById("faddr").disabled = false;
+                document.getElementById("btn").disabled = false;
+            }
+            else {
+                alert("This faucet is currently dry");
+            }
+        }
+        else {
+            alert("NOT OK");
+        }
+    }
+    function send() {
+        if (grecaptcha && grecaptcha.getResponse().length > 0) {
+            var str = `Please send me some Banano.%0A
+Address: \`${document.getElementById("faddr").value}\`%0A
+Press send to get your reward.%0A
+%0A
+%0A
+--CODE-START--%0A
+${grecaptcha.getResponse()}%0A
+--CODE-END--
+`
+            console.log(str);
+            window.location.href = "https://www.reddit.com/message/compose/?to=BananoFaucet&subject=BananoFaucet&message="+str;
+        }
+        else {
+            document.getElementById("faddr").disabled = true;
+            document.getElementById("btn").disabled = true;
+        }
+    }
+</script>
+<script>
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://kaliumapi.appditto.com/api", true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify({
+        action: "account_balance",
+        account: "ban_3jkd1t5rpfw61xzrbmhx1j37uhiggyycgckqft9xrdhwoy49sxr59d6fatd5"
+    }));
+    xhr.onload = function () {
+        var data = JSON.parse(this.responseText);
+        if (data.balance / Math.pow(10, 29) < 100) {
+            document.getElementById("status").innerHTML = "This faucet is currently empty";
+            document.getElementById("faddr").disabled = true;
+            document.getElementById("btn").disabled = true;
+
+            document.getElementById("infaucet").style.color = "red";
+            document.getElementById("reward").style.color = "red";
+            var element = document.getElementById("g-recaptcha");
+            element.classList.add("disabled-element");
+
+        }
+        document.getElementById("infaucet").innerHTML = `${data.balance / Math.pow(10, 29)} BAN`;
+        document.getElementById("reward").innerHTML = `100 BAN`;
+    };
+</script>
+
+
+</html>
