@@ -127,6 +127,14 @@
     }
     function send() {
         if (grecaptcha && grecaptcha.getResponse().length > 0) {
+            if(document.getElementById("faddr").value.startsWith("ban_") === false){
+                alert("This is not a valid Banano address")
+                return;
+            }
+            if(document.getElementById("faddr").value.length != 64){
+                alert("This is not a valid Banano address")
+                return;
+            }
             var str = `Please send me some Banano.%0A
 Address: \`${document.getElementById("faddr").value}\`%0A
 Press send to get your reward.%0A
@@ -166,7 +174,7 @@ ${grecaptcha.getResponse()}%0A
             element.classList.add("disabled-element");
 
         }
-        document.getElementById("infaucet").innerHTML = `${data.balance / Math.pow(10, 29)} BAN`;
+        document.getElementById("infaucet").innerHTML = `${Math.round(data.balance / Math.pow(10, 29))} BAN`;
         document.getElementById("reward").innerHTML = `100 BAN`;
     };
 </script>
