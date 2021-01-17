@@ -105,9 +105,7 @@ footer {
   width: 18.75rem;
 }
 
-#cap {
-  padding-top: 0.625rem;
-}
+
 
 .forms {
   padding-left: 0px;
@@ -115,7 +113,7 @@ footer {
 
 .o {
   padding-left: 3.125rem;
-  padding-top: 3.125rem;
+  padding-top: -3.125rem;
 }
 
 #btnDIV {
@@ -167,7 +165,7 @@ td {
 }
 
 .t {
-  padding-top: 3.125rem;
+  padding-top: 1.125rem;
 }
 
 #status {
@@ -182,4 +180,24 @@ td {
 #creeper {
   padding-top: 1.563rem;
   font-family: BAN;
+}
+h3{
+  font-family: BAN;
+  padding: 0;
+  margin: 0;
+}
+#req{
+  padding-top: 10px;
+  width: 25rem;
+  border-style: dashed;
+  border-color: #FBDD11;
+  font-family: BAN;
+  margin: auto;
+}
+#reqt{
+  padding-top: -10rem;
+}
+#reqh{
+  padding-bottom: -10rem;
+  margin: 0;
 }

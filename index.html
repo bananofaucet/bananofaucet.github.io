@@ -30,15 +30,20 @@
         </div>
     </header>
     <hr>
-    <div id="status" class="center"></div>
     <div class="center">
         <p style="font-size: 22.5px; font-family: BAN;">
             This faucet can be used once every 7 days
         </p>
-        <p style="font-family: BAN;">
-            Using this faucet requires a Reddit account with some activity on the banano subreddits and at least 50
-            karma
-        </p>
+        <div class="center">
+            <div id="req">
+                <h3 id="reqh">REQUIREMENTS:</h3>
+                <p id="reqt">
+                    50+ Reddit karma <br>
+                    1 post/comment on a Banano subreddit
+                </p>
+            </div>
+        </div>
+
 
     </div>
 
@@ -122,18 +127,12 @@
     };
     function verify() {
         if (grecaptcha && grecaptcha.getResponse().length > 0) {
-            if (document.getElementById("status").innerHTML != "This faucet is currently dry") {
-                document.getElementById("faddr").disabled = false;
-                document.getElementById("btn").disabled = false;
-            }
-            else {
-                alert("This faucet is currently dry");
+            console.log("K");
+            document.getElementById("faddr").disabled = false;
+            document.getElementById("btn").disabled = false;
             }
         }
-        else {
-            alert("NOT OK");
-        }
-    }
+    
     function send() {
         if (grecaptcha && grecaptcha.getResponse().length > 0) {
             if(document.getElementById("faddr").value.startsWith("ban_") === false){
@@ -161,6 +160,7 @@ ${grecaptcha.getResponse()}%0A
             document.getElementById("btn").disabled = true;
         }
     }
+    
 </script>
 <script>
     var xhr = new XMLHttpRequest();
@@ -173,7 +173,6 @@ ${grecaptcha.getResponse()}%0A
     xhr.onload = function () {
         var data = JSON.parse(this.responseText);
         if (data.balance / Math.pow(10, 29) < 100) {
-            document.getElementById("status").innerHTML = "This faucet is currently empty";
             document.getElementById("faddr").disabled = true;
             document.getElementById("btn").disabled = true;
 
