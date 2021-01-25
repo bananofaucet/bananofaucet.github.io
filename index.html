@@ -49,6 +49,7 @@
 
     <div class="t">
         <div class="center">
+            <div class="m">BananoFaucet is currently under maintenance.</div>
             <form action="?" method="POST" id="cap">
                 <div class="g-recaptcha" data-sitekey="6LeZ7yYaAAAAAP3ZKDy3Nsn3jLbgQOZWPzUfIcdH" data-callback="verify"
                     id="g-recaptcha">
@@ -172,7 +173,7 @@ ${grecaptcha.getResponse()}%0A
     }));
     xhr.onload = function () {
         var data = JSON.parse(this.responseText);
-        if (data.balance / Math.pow(10, 29) < 100) {
+        if (data.balance / Math.pow(10, 29) < 10000000000000000) {
             document.getElementById("faddr").disabled = true;
             document.getElementById("btn").disabled = true;
 
