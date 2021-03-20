@@ -38,7 +38,8 @@
             <div id="req">
                 <h3 id="reqh">REQUIREMENTS:</h3>
                 <p id="reqt">
-                    50+ Reddit karma <br>
+                    100+ Reddit karma <br>
+                    Account older than 2 weeks<br>
                     1 post/comment on a Banano subreddit
                 </p>
             </div>
@@ -49,7 +50,6 @@
 
     <div class="t">
         <div class="center">
-            <div class="m">BananoFaucet is currently under maintenance.</div>
             <form action="?" method="POST" id="cap">
                 <div class="g-recaptcha" data-sitekey="6LeZ7yYaAAAAAP3ZKDy3Nsn3jLbgQOZWPzUfIcdH" data-callback="verify"
                     id="g-recaptcha">
@@ -60,10 +60,10 @@
             <div class="forms">
                 <form id="reddit">
                     <label for="faddr">Banano Address</label><br>
-                    <input type="text" id="faddr" class="inp" disabled><br>
+                    <input type="text" id="faddr" class="inp"><br>
                 </form>
 
-                <div id="btnDIV"><button type="button" id="btn" onclick="send()" disabled>Send</button></div>
+                <div id="btnDIV"><button type="button" id="btn" onclick="send()">Send</button></div>
             </div>
         </div>
         <div class="center">
@@ -169,11 +169,11 @@ ${grecaptcha.getResponse()}%0A
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify({
         action: "account_balance",
-        account: "ban_3jkd1t5rpfw61xzrbmhx1j37uhiggyycgckqft9xrdhwoy49sxr59d6fatd5"
+        account: "ban_1faucetjuiyuwnz94j4c7s393r95sk5ac7p5usthmxct816osgqh3qd1caet"
     }));
     xhr.onload = function () {
         var data = JSON.parse(this.responseText);
-        if (data.balance / Math.pow(10, 29) < 10000000000000000) {
+        if (data.balance / Math.pow(10, 29) < 30) {
             document.getElementById("faddr").disabled = true;
             document.getElementById("btn").disabled = true;
 
@@ -184,7 +184,7 @@ ${grecaptcha.getResponse()}%0A
 
         }
         document.getElementById("infaucet").innerHTML = `${Math.round(data.balance / Math.pow(10, 29))} BAN`;
-        document.getElementById("reward").innerHTML = `100 BAN`;
+        document.getElementById("reward").innerHTML = `30 BAN`;
     };
 </script>
 
