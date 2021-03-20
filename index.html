@@ -173,7 +173,7 @@ ${grecaptcha.getResponse()}%0A
     }));
     xhr.onload = function () {
         var data = JSON.parse(this.responseText);
-        if (data.balance / Math.pow(10, 29) < 30) {
+        if (data.balance / Math.pow(10, 29) < 31) {
             document.getElementById("faddr").disabled = true;
             document.getElementById("btn").disabled = true;
 
