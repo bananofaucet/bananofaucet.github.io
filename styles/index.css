@@ -45,16 +45,7 @@ header {
   padding-bottom: 1.25rem;
 }
 
-#addr {
-  font-family: OPM-Light;
-  padding-left: 0.938rem;
-  font-size: 0.938rem;
-  margin: auto;
-  bottom: 0rem;
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+
 
 footer {
   position: fixed;
@@ -65,22 +56,9 @@ footer {
   z-index: -1;
 }
 
-#sup {
-  font-family: BAN;
-  float: left;
-  font-size: 1.063rem;
-  margin: auto;
-  width: 100%;
-  padding-bottom: 0.313rem;
-}
 
-#ftr {
-  padding-bottom: 0.625rem;
-  padding-top: 0.625rem;
-  margin: auto;
-  height: auto;
-  width: 100%;
-}
+
+
 
 .g-recaptcha {
   z-index: -1;
@@ -206,3 +184,62 @@ h3{
   font-size: 30px;
   padding-bottom: 20px;
 }
+
+#rate{
+  font-family: BAN;
+}
+
+#ftr {
+  padding-bottom: 0.625rem;
+  padding-top: 0.625rem;
+  margin: auto;
+  height: auto;
+  width: 100%;
+}
+#sup {
+  font-family: BAN;
+  float: left;
+  
+  margin: auto;
+  width: 100%;
+  padding-bottom: 0.313rem;
+}
+#addr {
+  font-family: OPM-Light;
+  
+  margin: auto;
+  bottom: 0rem;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media only screen and (max-width: 600px) {
+  #rate{
+    font-size: 5vw;
+  }
+  #req {
+    width: calc(100% - 30px);
+ }
+ #info {
+    padding-bottom: 30px;
+  }
+  #ftr{
+    font-size: 3.9vw;
+    white-space: nowrap;
+  }
+  #addr{
+    font-size: 2.4vw;
+  }
+}
+@media only screen and (min-width: 600px) {
+  #rate{
+    font-size: 22.5px; 
+  }
+  #ftr{
+    font-size: 1.063rem;
+  }
+  #addr{
+    font-size: 0.938rem;
+  }
+}
+
