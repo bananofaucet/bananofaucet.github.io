@@ -5,11 +5,11 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-13YC9Q2MY4"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    gtag('config', 'G-13YC9Q2MY4');
+        gtag('config', 'G-13YC9Q2MY4');
     </script>
     <title>BananoFaucet</title>
     <link rel="stylesheet" href="styles/index.css">
@@ -17,9 +17,7 @@
     <meta name="theme-color" content="#4CBF4B">
     <link rel="icon" type="image/png" href="https://banano.cc/assets/logo.png" />
     <meta property="image" content="https://banano.cc/assets/logo.png">
-    <meta name="keywords" content="banano, banano faucet, free banano">
-    <meta name="author" content="MiranDaniel">
-    <meta name="description" content="Get free Banano, every week!">
+
 </head>
 
 <body>
@@ -27,67 +25,46 @@
         <div id="hdr">
             <img src="images/banano2.svg" id="logo">
             <h1 id="title">
-                BananoFaucet
+                BananoFaucet Statistics
             </h1>
         </div>
     </header>
     <hr>
-    <div class="center">
-        <p id="rate">
-            This faucet can be used once every 7 days
-        </p>
-        <div class="center">
-            <div id="req">
-                <h3 id="reqh">REQUIREMENTS:</h3>
-                <p id="reqt">
-                    100+ Reddit karma <br>
-                    Account older than 2 weeks<br>
-                    1 post/comment on a Banano subreddit
-                </p>
-            </div>
-        </div>
-
-
-    </div>
-
     <div class="t">
-        <div class="center">
-            <form action="?" method="POST" id="cap">
-                <div class="g-recaptcha" data-sitekey="6LeZ7yYaAAAAAP3ZKDy3Nsn3jLbgQOZWPzUfIcdH" data-callback="verify"
-                    id="g-recaptcha">
-                </div>
-                <br />
-            </form>
-
-            <div class="forms">
-                <form id="reddit">
-                    <label for="faddr">Banano Address</label><br>
-                    <input type="text" id="faddr" class="inp"><br>
-                </form>
-
-                <div id="btnDIV"><button type="button" id="btn" onclick="send()">Send</button></div>
-            </div>
-        </div>
-        <div class="center">
-            <table id="info" class="center">
-                <tr>
-                    <th>Faucet balance</th>
-                    <th>Faucet reward</th>
-                </tr>
-                <tr>
-                    <td id="infaucet">Loading</td>
-                    <td id="reward">Loading</td>
-                </tr>
-
-            </table>
-            <div class="center" id="creeper">
-                <a
-                    href="https://creeper.banano.cc/explorer/account/ban_1faucetjuiyuwnz94j4c7s393r95sk5ac7p5usthmxct816osgqh3qd1caet/history">View
-                    on Creeper</a>
-            </div>
-
-
-        </div>
+        <table id="info" class="center">
+            <tr>
+                <th>Banano given out</th>
+                <th>Monkeys fed</th>
+            </tr>
+            <tr>
+                <td id="out">Loading</td>
+                <td id="monkeys">Loading</td>
+            </tr>
+        </table>
+        <table id="info" class="center">
+            <tr>
+                <th>Percentage of mobile users</th>
+            </tr>
+            <tr>
+                <td>77.0%</td>
+            </tr>
+        </table>
+        <table id="info" class="center">
+            <tr>
+                <th>Percentage of PC users</th>
+            </tr>
+            <tr>
+                <td>22.2%</td>
+            </tr>
+        </table>
+        <table id="info" class="center">
+            <tr>
+                <th>Percentage of tablet users</th>
+            </tr>
+            <tr>
+                <td>0.08%</td>
+            </tr>
+        </table>
     </div>
     <footer class="center">
         <hr>
@@ -133,16 +110,16 @@
             console.log("K");
             document.getElementById("faddr").disabled = false;
             document.getElementById("btn").disabled = false;
-            }
         }
-    
+    }
+
     function send() {
         if (grecaptcha && grecaptcha.getResponse().length > 0) {
-            if(document.getElementById("faddr").value.startsWith("ban_") === false){
+            if (document.getElementById("faddr").value.startsWith("ban_") === false) {
                 alert("This is not a valid Banano address")
                 return;
             }
-            if(document.getElementById("faddr").value.length != 64){
+            if (document.getElementById("faddr").value.length != 64) {
                 alert("This is not a valid Banano address")
                 return;
             }
@@ -163,7 +140,7 @@ ${grecaptcha.getResponse()}%0A
             document.getElementById("btn").disabled = true;
         }
     }
-    
+
 </script>
 <script>
     var xhr = new XMLHttpRequest();
@@ -185,8 +162,8 @@ ${grecaptcha.getResponse()}%0A
             element.classList.add("disabled-element");
 
         }
-        document.getElementById("infaucet").innerHTML = `${Math.round(data.balance / Math.pow(10, 29))} BAN`;
-        document.getElementById("reward").innerHTML = `30 BAN`;
+        document.getElementById("out").innerHTML = `${45000-Math.round(data.balance / Math.pow(10, 29))} BAN`;
+        document.getElementById("monkeys").innerHTML = `${Math.round(Math.round(45000-data.balance / Math.pow(10, 29))/30)}`;
     };
 </script>
 
