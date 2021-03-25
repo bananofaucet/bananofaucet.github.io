@@ -73,16 +73,18 @@
             <table id="info" class="center">
                 <tr>
                     <th>Faucet balance</th>
+                    <th>Uses left</th>
                     <th>Faucet reward</th>
                 </tr>
                 <tr>
                     <td id="infaucet">Loading</td>
+                    <td id="uses">Loading</td>
                     <td id="reward">Loading</td>
                 </tr>
 
             </table>
             <div class="center" id="creeper">
-                <a
+                <a id="creeper"
                     href="https://creeper.banano.cc/explorer/account/ban_1faucetjuiyuwnz94j4c7s393r95sk5ac7p5usthmxct816osgqh3qd1caet/history">View
                     on Creeper</a>
             </div>
@@ -98,6 +100,7 @@
             <p id="addr">ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87</p>
         </div>
     </footer>
+    
 </body>
 
 <script src="https://www.google.com/recaptcha/api.js"></script>
@@ -187,6 +190,7 @@ ${grecaptcha.getResponse()}%0A
 
         }
         document.getElementById("infaucet").innerHTML = `${Math.round(data.balance / Math.pow(10, 29))} BAN`;
+        document.getElementById("uses").innerHTML = `${Math.round(data.balance / Math.pow(10, 29)/30)}`;
         document.getElementById("reward").innerHTML = `30 BAN`;
     };
 </script>

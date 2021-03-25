@@ -11,6 +11,8 @@
 html, body {
   padding: 0;
   margin: 0;
+  background-color: #2A2A2E;
+  color: white;
 }
 
 @-ms-viewport {
@@ -22,9 +24,9 @@ html, body {
 
 header {
   font-family: BAN;
-  background-color: #2A2A2E;
+  background-color: #212124;
   border-style: solid;
-  border-color: #2A2A2E;
+  border-color: #212124;
 }
 
 #logo {
@@ -51,7 +53,7 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #2A2A2E;
+  background-color: #212124;
   color: #FBDD11;
   z-index: -1;
 }
@@ -158,6 +160,8 @@ td {
 #creeper {
   padding-top: 1.563rem;
   font-family: BAN;
+  color: whitesmoke;
+  text-decoration: underline;
 }
 h3{
   font-family: BAN;
