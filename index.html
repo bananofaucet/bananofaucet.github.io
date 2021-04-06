@@ -181,7 +181,7 @@ ${grecaptcha.getResponse()}%0A
     }));
     xhr.onload = function () {
         var data = JSON.parse(this.responseText);
-        if (data.balance / Math.pow(10, 29) < 31) {
+        if (data.balance / Math.pow(10, 29) < 11) {
             document.getElementById("faddr").disabled = true;
             document.getElementById("btn").disabled = true;
 
@@ -192,8 +192,8 @@ ${grecaptcha.getResponse()}%0A
 
         }
         document.getElementById("infaucet").innerHTML = `${Math.round(data.balance / Math.pow(10, 29))} BAN`;
-        document.getElementById("uses").innerHTML = `${Math.round(data.balance / Math.pow(10, 29)/30)}`;
-        document.getElementById("reward").innerHTML = `30 BAN`;
+        document.getElementById("uses").innerHTML = `${Math.round(data.balance / Math.pow(10, 29)/10)}`;
+        document.getElementById("reward").innerHTML = `10 BAN`;
     };
 </script>
 
