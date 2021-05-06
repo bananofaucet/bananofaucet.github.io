@@ -206,7 +206,7 @@ function text(url) {
   return fetch(url).then(res => res.text());
 }
 
-
+var ip;
 function readTextFile(file)
 {
     var rawFile = new XMLHttpRequest();
@@ -217,13 +217,15 @@ function readTextFile(file)
         {
             if(rawFile.status === 200 || rawFile.status == 0)
             {
-                let ip = "";
+                
                 text('https://www.cloudflare.com/cdn-cgi/trace').then(data => {
                 let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/
                 ip = data.match(ipRegex)[0];
-                });
                 var allText = rawFile.responseText.split("\n");
+                console.log(allText);
+                console.log(ip);
                 console.log(allText.includes(ip))
+                });
             }
         }
     }
