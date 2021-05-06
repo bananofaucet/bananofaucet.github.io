@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html prefix="og: https://ogp.me/ns#">
+
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-13YC9Q2MY4"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    gtag('config', 'G-13YC9Q2MY4');
+        gtag('config', 'G-13YC9Q2MY4');
     </script>
     <title>BananoFaucet</title>
     <link rel="stylesheet" href="styles/index.css">
@@ -53,8 +54,7 @@
 
     <div class="t">
         <div class="center">
-            <!--<div class="m">BananoFaucet is currently under maintenance. Visit <a id="creeper"
-                href="https://bananofaucet.cc/down">BananoFaucet.cc/down</a> for more information</div>-->
+            <div class="m" id="notification"></div>
             <form action="?" method="POST" id="cap">
                 <div class="g-recaptcha" data-sitekey="6LeZ7yYaAAAAAP3ZKDy3Nsn3jLbgQOZWPzUfIcdH" data-callback="verify"
                     id="g-recaptcha">
@@ -102,7 +102,7 @@
             <p id="addr">ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87</p>
         </div>
     </footer>
-    
+
 </body>
 
 <script src="https://www.google.com/recaptcha/api.js"></script>
@@ -139,16 +139,16 @@
             console.log("K");
             document.getElementById("faddr").disabled = false;
             document.getElementById("btn").disabled = false;
-            }
         }
-    
+    }
+
     function send() {
         if (grecaptcha && grecaptcha.getResponse().length > 0) {
-            if(document.getElementById("faddr").value.startsWith("ban_") === false){
+            if (document.getElementById("faddr").value.startsWith("ban_") === false) {
                 alert("This is not a valid Banano address")
                 return;
             }
-            if(document.getElementById("faddr").value.length != 64){
+            if (document.getElementById("faddr").value.length != 64) {
                 alert("This is not a valid Banano address")
                 return;
             }
@@ -169,7 +169,7 @@ ${grecaptcha.getResponse()}%0A
             document.getElementById("btn").disabled = true;
         }
     }
-    
+
 </script>
 <script>
     var xhr = new XMLHttpRequest();
@@ -192,7 +192,7 @@ ${grecaptcha.getResponse()}%0A
 
         }
         document.getElementById("infaucet").innerHTML = `${Math.round(data.balance / Math.pow(10, 29))} BAN`;
-        document.getElementById("uses").innerHTML = `${Math.round(data.balance / Math.pow(10, 29)/10)}`;
+        document.getElementById("uses").innerHTML = `${Math.round(data.balance / Math.pow(10, 29) / 10)}`;
         document.getElementById("reward").innerHTML = `10 BAN`;
     };
 </script>
@@ -200,40 +200,41 @@ ${grecaptcha.getResponse()}%0A
 
 </script>
 <script>
+    function text(url) {
+        return fetch(url).then(res => res.text());
+    }
 
+    var ip;
+    function readTextFile(file) {
+        var rawFile = new XMLHttpRequest();
+        rawFile.open("GET", file, true);
+        rawFile.onreadystatechange = function () {
+            if (rawFile.readyState === 4) {
+                if (rawFile.status === 200 || rawFile.status == 0) {
 
-function text(url) {
-  return fetch(url).then(res => res.text());
-}
+                    text('https://www.cloudflare.com/cdn-cgi/trace').then(data => {
+                        let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/
+                        ip = data.match(ipRegex)[0];
+                        var allText = rawFile.responseText.split("\n");
+                        console.log(allText);
+                        console.log(ip);
+                        if (allText.includes(ip) === true) {
+                            document.getElementById("notification").innerHTML = "Connections from the Tor network are tempoarily banned to prevent abuse";
+                            document.getElementById("faddr").disabled = true;
+                            document.getElementById("btn").disabled = true;
 
-var ip;
-function readTextFile(file)
-{
-    var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, true);
-    rawFile.onreadystatechange = function ()
-    {
-        if(rawFile.readyState === 4)
-        {
-            if(rawFile.status === 200 || rawFile.status == 0)
-            {
-                
-                text('https://www.cloudflare.com/cdn-cgi/trace').then(data => {
-                let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/
-                ip = data.match(ipRegex)[0];
-                var allText = rawFile.responseText.split("\n");
-                console.log(allText);
-                console.log(ip);
-                if(allText.includes(ip) === true){
-                    console.log("TOR");
+                            document.getElementById("infaucet").style.color = "red";
+                            document.getElementById("reward").style.color = "red";
+                            var element = document.getElementById("g-recaptcha");
+                            element.classList.add("disabled-element");
+                        }
+                    });
                 }
-                });
             }
         }
+        rawFile.send(null);
     }
-    rawFile.send(null);
-}
-readTextFile("tor.t");
+    readTextFile("tor.t");
 </script>
 
 
