@@ -42,9 +42,16 @@
             <div id="req">
                 <h3 id="reqh">REQUIREMENTS:</h3>
                 <p id="reqt">
-                    100+ Reddit karma <br>
+                    100+ Reddit karma<br>
                     Account older than 2 weeks<br>
                     1 post/comment on a Banano subreddit
+                </p>
+            </div>
+            <div id="req">
+                <h3 id="reqh">RULES:</h3>
+                <p id="reqt">
+                    <a id="creeper"
+                    href="https://www.reddit.com/r/BananoFaucet/comments/n6ve4i/bananofaucet_karma_rules_please_read/">Karma rules</a>
                 </p>
             </div>
         </div>
@@ -66,6 +73,10 @@
                 <form id="reddit">
                     <label for="faddr">Banano Address</label><br>
                     <input type="text" id="faddr" class="inp"><br>
+                    <div id="rules">
+                        <input type="checkbox" id="rulesBox" name="rulesBox">
+                        <label for="rulesBox">I read the rules and I agree to them</label><br>
+                    </div>
                 </form>
 
                 <div id="btnDIV"><button type="button" id="btn" onclick="send()">Send</button></div>
@@ -152,6 +163,11 @@
                 alert("This is not a valid Banano address")
                 return;
             }
+            if (document.getElementById('rulesBox').checked) {
+                console.log("OK");
+            } else {
+                alert("You need to read and agree to the rules first");
+            }
             var str = `Please send me some Banano.%0A
 Address: \`${document.getElementById("faddr").value}\`%0A
 Press send to get your reward. (If the send button is grayed out, add a new character to the message, then remove it)%0A
@@ -184,6 +200,7 @@ ${grecaptcha.getResponse()}%0A
         if (data.balance / Math.pow(10, 29) < 11) {
             document.getElementById("faddr").disabled = true;
             document.getElementById("btn").disabled = true;
+            document.getElementById("rulesBox").disabled = true;
 
             document.getElementById("infaucet").style.color = "red";
             document.getElementById("uses").style.color = "red";
@@ -191,7 +208,6 @@ ${grecaptcha.getResponse()}%0A
             var element = document.getElementById("g-recaptcha");
             element.classList.add("disabled-element");
             document.getElementById("notification").innerHTML = "The faucet is empty, please come back later.";
-
         }
         document.getElementById("infaucet").innerHTML = `${Math.round(data.balance / Math.pow(10, 29))} BAN`;
         document.getElementById("uses").innerHTML = `${Math.round(data.balance / Math.pow(10, 29) / 10)}`;

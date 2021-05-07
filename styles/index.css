@@ -217,6 +217,13 @@ h3{
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+#rules{
+  padding-top: 0.2vw;
+  margin-bottom: -15px;
+}
+
+
 @media only screen and (max-width: 600px) {
   #rate{
     font-size: 5vw;
@@ -234,6 +241,7 @@ h3{
   #addr{
     font-size: 2.4vw;
   }
+
 }
 @media only screen and (min-width: 600px) {
   #rate{
