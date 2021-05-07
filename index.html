@@ -186,9 +186,11 @@ ${grecaptcha.getResponse()}%0A
             document.getElementById("btn").disabled = true;
 
             document.getElementById("infaucet").style.color = "red";
+            document.getElementById("uses").style.color = "red";
             document.getElementById("reward").style.color = "red";
             var element = document.getElementById("g-recaptcha");
             element.classList.add("disabled-element");
+            document.getElementById("notification").innerHTML = "The faucet is empty, please come back later.";
 
         }
         document.getElementById("infaucet").innerHTML = `${Math.round(data.balance / Math.pow(10, 29))} BAN`;
@@ -224,6 +226,7 @@ ${grecaptcha.getResponse()}%0A
                             document.getElementById("btn").disabled = true;
 
                             document.getElementById("infaucet").style.color = "red";
+                            document.getElementById("uses").style.color = "red";
                             document.getElementById("reward").style.color = "red";
                             var element = document.getElementById("g-recaptcha");
                             element.classList.add("disabled-element");
