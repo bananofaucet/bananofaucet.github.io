@@ -223,6 +223,14 @@ h3{
   margin-bottom: -15px;
 }
 
+#infoF{
+  position: absolute;
+  left: 0px;
+  top: 60px;
+  font-family: OPM-Light;
+  font-size: 12px;
+}
+
 
 @media only screen and (max-width: 600px) {
   #rate{

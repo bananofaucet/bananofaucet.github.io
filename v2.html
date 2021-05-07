@@ -11,7 +11,7 @@
 
         gtag('config', 'G-13YC9Q2MY4');
     </script>
-    <title>BananoFaucet V2 betatest</title>
+    <title>BananoFaucet</title>
     <link rel="stylesheet" href="styles/index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <meta name="theme-color" content="#FBDD11">
@@ -29,7 +29,7 @@
         <div id="hdr">
             <img src="images/banano2.svg" id="logo">
             <h1 id="title">
-                BananoFaucet V2 betatest
+                BananoFaucet
             </h1>
         </div>
     </header>
@@ -112,6 +112,7 @@
             <br>
             <p id="addr">ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87</p>
         </div>
+        <div id="infoF">DI: BF_V2.sub.(10).7.5.1</div>
     </footer>
 
 </body>
@@ -188,7 +189,6 @@ ${grecaptcha.getResponse()}%0A
 
 </script>
 <script>
-document.getElementById("notification").innerHTML = "THIS IS A PAGE FOR BETA TESTERS ONLY";
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "https://kaliumapi.appditto.com/api", true);
     xhr.setRequestHeader('Content-Type', 'application/json');
@@ -198,7 +198,7 @@ document.getElementById("notification").innerHTML = "THIS IS A PAGE FOR BETA TES
     }));
     xhr.onload = function () {
         var data = JSON.parse(this.responseText);
-        if (data.balance / Math.pow(10, 29) < 0) {
+        if (data.balance / Math.pow(10, 29) < 11) {
             document.getElementById("faddr").disabled = true;
             document.getElementById("btn").disabled = true;
             document.getElementById("rulesBox").disabled = true;
