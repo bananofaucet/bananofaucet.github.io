@@ -42,7 +42,7 @@
             <div id="req">
                 <h3 id="reqh">REQUIREMENTS:</h3>
                 <p id="reqt">
-                    100+ Reddit karma<br>
+                    420+ Reddit karma<br>
                     Account older than 2 weeks<br>
                     1 post/comment on a Banano subreddit
                 </p>
@@ -112,7 +112,7 @@
             <br>
             <p id="addr">ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87</p>
         </div>
-        <div id="infoF">DI: BF_V2.sub.(10).7.5.1</div>
+        <div id="infoF">DI: BF_V2.sub.(10|420+).9.5.1</div>
     </footer>
 
 </body>
@@ -143,7 +143,7 @@
 
             output += c;
         }
-
+ 
         return output;
     };
     function verify() {
@@ -156,7 +156,7 @@
 
     function send() {
         if (grecaptcha && grecaptcha.getResponse().length > 0) {
-            if (document.getElementById("faddr").value.startsWith("ban_") === false) {
+            if (document.getElementById("faddr").value.toLowerCase().startsWith("ban_") === false) {
                 alert("This is not a valid Banano address")
                 return;
             }
