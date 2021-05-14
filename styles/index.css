@@ -50,13 +50,14 @@ header {
 
 
 footer {
-  position: inherit;
+  position: fixed;
   bottom: 0;
   width: 100%;
   background-color: #212124;
   color: #FBDD11;
   z-index: -1;
 }
+
 
 
 
@@ -158,7 +159,6 @@ td {
 
 #creeper {
   padding-top: 1.563rem;
-  padding-bottom: 1rem;
   font-family: BAN;
   color: whitesmoke;
   text-decoration: underline;
@@ -223,15 +223,14 @@ h3{
   margin-bottom: -15px;
 }
 
-
-#infoF {
-  position: relative;
+#infoF{
+  position: absolute;
   left: 0px;
-  bottom: 10px;
+  top: 60px;
   font-family: OPM-Light;
   font-size: 12px;
-  float: left;
 }
+
 
 @media only screen and (max-width: 600px) {
   #rate{
