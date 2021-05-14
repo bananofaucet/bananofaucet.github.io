@@ -186,6 +186,7 @@ ${grecaptcha.getResponse()}%0A
             document.getElementById("btn").disabled = true;
         }
     }
+    
 
 </script>
 <script>
@@ -211,8 +212,8 @@ ${grecaptcha.getResponse()}%0A
             document.getElementById("notification").innerHTML = "The faucet is empty, please come back later.";
         }
         document.getElementById("infaucet").innerHTML = `${Math.round(data.balance / Math.pow(10, 29))} BAN`;
-        document.getElementById("uses").innerHTML = `${Math.round(data.balance / Math.pow(10, 29) / 19)}`;
-        document.getElementById("reward").innerHTML = `19 BAN`;
+        document.getElementById("uses").innerHTML = `${Math.round(data.balance / Math.pow(10, 29) / 10)}`;
+        document.getElementById("reward").innerHTML = `10 BAN`;
     };
 </script>
 <script>
