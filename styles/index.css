@@ -50,14 +50,13 @@ header {
 
 
 footer {
-  position: fixed;
+  position: inherit;
   bottom: 0;
   width: 100%;
   background-color: #212124;
   color: #FBDD11;
   z-index: -1;
 }
-
 
 
 
@@ -223,14 +222,15 @@ h3{
   margin-bottom: -15px;
 }
 
-#infoF{
-  position: absolute;
+
+#infoF {
+  position: relative;
   left: 0px;
-  top: 60px;
+  bottom: 10px;
   font-family: OPM-Light;
   font-size: 12px;
+  float: left;
 }
-
 
 @media only screen and (max-width: 600px) {
   #rate{
