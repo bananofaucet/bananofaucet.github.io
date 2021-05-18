@@ -50,8 +50,9 @@
             <div id="req">
                 <h3 id="reqh">RULES:</h3>
                 <p id="reqt">
+                    Your karma needs to have been gained by meaningfully contributing to the community. Vote manipulation and karma begging is not allowed.
                     <a id="creeper"
-                    href="https://www.reddit.com/r/BananoFaucet/comments/n6ve4i/bananofaucet_karma_rules_please_read/">Karma rules</a>
+                    href="https://www.reddit.com/r/BananoFaucet/comments/n6ve4i/bananofaucet_karma_rules_please_read/">Full rules</a>
                 </p>
             </div>
         </div>
@@ -94,12 +95,25 @@
                     <td id="uses">Loading</td>
                     <td id="reward">Loading</td>
                 </tr>
-
             </table>
             <div class="center" id="creeper">
                 <a id="creeper"
                     href="https://creeper.banano.cc/explorer/account/ban_1faucetjuiyuwnz94j4c7s393r95sk5ac7p5usthmxct816osgqh3qd1caet/history">View
                     on Creeper</a>
+            </div>
+            <div id="rep" style="margin-top: 25px;">
+                <h4 id="reqh">BananoFaucet is a representative!</h4>
+                <p id="reqt" style="padding-left: 10px; padding-right: 10px;">
+                    Choosing a representative with low voting weight and high uptime helps secure the network through decentralization. This will help make the banano network become more secure as one (or a few) parties won't control which blocks are valid.
+                    <br>
+                    <br>
+                    <a id="creeper"
+                    href="https://hatebin.com/pgrckulgdg">How to switch on Kalium</a><br>
+                    <a id="creeper"
+                    href="http://vault.banano.co.in/representatives">How to switch on BananoVault</a><br>
+                    <a id="creeper"
+                    href="https://banano.nault.cc/representatives">How to switch on Nault</a>
+                </p>
             </div>
 
 
@@ -211,8 +225,8 @@ ${grecaptcha.getResponse()}%0A
             document.getElementById("notification").innerHTML = "The faucet is empty, please come back later.";
         }
         document.getElementById("infaucet").innerHTML = `${Math.round(data.balance / Math.pow(10, 29))} BAN`;
-        document.getElementById("uses").innerHTML = `${Math.round(data.balance / Math.pow(10, 29) / 19)}`;
-        document.getElementById("reward").innerHTML = `19 BAN`;
+        document.getElementById("uses").innerHTML = `${Math.round(data.balance / Math.pow(10, 29) / 10)}`;
+        document.getElementById("reward").innerHTML = `10 BAN`;
     };
 </script>
 <script>

@@ -262,3 +262,22 @@ h3{
     font-size: 0.938rem;
   }
 }
+
+#rep{
+  padding-top: 10px;
+  width: 25rem;
+  border-style: dashed;
+  border-color: #9c9042;
+  font-family: BAN;
+  margin: auto;
+  opacity: 0.5;
+}
+#rep:hover{
+  padding-top: 10px;
+  width: 25rem;
+  border-style: dashed;
+  border-color: #FBDD11;
+  font-family: BAN;
+  margin: auto;
+  opacity: 1;
+}
