@@ -102,6 +102,11 @@ footer {
 
 #btn {
   width: 18.75rem;
+  cursor: pointer;
+}
+
+#btn:hover {
+  background-color: darkgray;
 }
 
 #lbl {
