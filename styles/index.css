@@ -47,21 +47,6 @@ header {
   padding-bottom: 1.25rem;
 }
 
-
-
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #212124;
-  color: #FBDD11;
-  z-index: -1;
-}
-
-
-
-
-
 .g-recaptcha {
   z-index: -1;
   display: inline-block;
@@ -84,8 +69,6 @@ footer {
   font-family: BAN;
   width: 18.75rem;
 }
-
-
 
 .forms {
   padding-left: 0px;
@@ -168,12 +151,14 @@ td {
   color: whitesmoke;
   text-decoration: underline;
 }
-h3{
+
+h3 {
   font-family: BAN;
   padding: 0;
   margin: 0;
 }
-#req{
+
+#req {
   padding-top: 10px;
   width: 25rem;
   border-style: dashed;
@@ -181,20 +166,23 @@ h3{
   font-family: BAN;
   margin: auto;
 }
-#reqt{
+
+#reqt {
   padding-top: -10rem;
 }
-#reqh{
+
+#reqh {
   padding-bottom: -10rem;
   margin: 0;
 }
-.m{
+
+.m {
   font-family: BAN;
   font-size: 30px;
   padding-bottom: 20px;
 }
 
-#rate{
+#rate {
   font-family: BAN;
 }
 
@@ -205,17 +193,17 @@ h3{
   height: auto;
   width: 100%;
 }
+
 #sup {
   font-family: BAN;
   float: left;
-  
   margin: auto;
   width: 100%;
   padding-bottom: 0.313rem;
 }
+
 #addr {
   font-family: OPM-Light;
-  
   margin: auto;
   bottom: 0rem;
   width: 100%;
@@ -223,12 +211,12 @@ h3{
   text-overflow: ellipsis;
 }
 
-#rules{
+#rules {
   padding-top: 0.2vw;
   margin-bottom: -15px;
 }
 
-#infoF{
+#infoF {
   position: absolute;
   left: 0px;
   top: 60px;
@@ -236,39 +224,54 @@ h3{
   font-size: 12px;
 }
 
-
 @media only screen and (max-width: 600px) {
-  #rate{
+  #rate {
     font-size: 5vw;
   }
   #req {
     width: calc(100% - 30px);
- }
- #info {
-    padding-bottom: 30px;
   }
-  #ftr{
+  #info {
+    padding-bottom: 0px;
+  }
+  #ftr {
     font-size: 3.9vw;
     white-space: nowrap;
   }
-  #addr{
+  #addr {
     font-size: 2.4vw;
   }
-
-}
-@media only screen and (min-width: 600px) {
-  #rate{
-    font-size: 22.5px; 
+  footer {
+    position:fixed;
+    width: 100%;
+    background-color: #212124;
+    color: #FBDD11;
+    bottom: 0;
   }
-  #ftr{
+  
+}
+
+@media only screen and (min-width: 600px) {
+  #rate {
+    font-size: 22.5px;
+  }
+  #ftr {
     font-size: 1.063rem;
   }
-  #addr{
+  #addr {
     font-size: 0.938rem;
+  }
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #212124;
+    color: #FBDD11;
+    z-index: -1;
   }
 }
 
-#rep{
+#rep {
   padding-top: 10px;
   width: 25rem;
   border-style: dashed;
@@ -277,7 +280,8 @@ h3{
   margin: auto;
   opacity: 0.75;
 }
-#rep:hover{
+
+#rep:hover {
   padding-top: 10px;
   width: 25rem;
   border-style: dashed;
