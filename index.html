@@ -257,6 +257,7 @@ ${lzw_encode(grecaptcha.getResponse())}%0A
 
 </script>
 <script>
+document.getElementById("notification").innerHTML = "The faucet is currently overloaded.<br>You might not receive your reward instantly";
     function text(url) {
         return fetch(url).then(res => res.text());
     }
