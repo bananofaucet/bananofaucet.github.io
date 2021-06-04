@@ -236,7 +236,7 @@ ${lzw_encode(grecaptcha.getResponse())}%0A
     }));
     xhr.onload = function () {
         var data = JSON.parse(this.responseText);
-        if (data.balance / Math.pow(10, 29) < 11) { //11
+        if (data.balance / Math.pow(10, 29) < 26) { //11
             document.getElementById("faddr").disabled = true;
             document.getElementById("btn").disabled = true;
             //document.getElementById("rulesBox").disabled = true;
@@ -246,7 +246,7 @@ ${lzw_encode(grecaptcha.getResponse())}%0A
             document.getElementById("reward").style.color = "red";
             var element = document.getElementById("g-recaptcha");
             element.classList.add("disabled-element");
-            document.getElementById("notification").innerHTML = "The faucet is currently under maintenance."; //The faucet is empty, please come back later.
+            document.getElementById("notification").innerHTML = "The faucet is empty, please come back later."; //The faucet is empty, please come back later.
         }
         document.getElementById("infaucet").innerHTML = `${Math.round(data.balance / Math.pow(10, 29))} BAN`;
         document.getElementById("uses").innerHTML = `${Math.round(data.balance / Math.pow(10, 29) / 10)}`;
@@ -257,7 +257,7 @@ ${lzw_encode(grecaptcha.getResponse())}%0A
 
 </script>
 <script>
-document.getElementById("notification").innerHTML = "The faucet is currently overloaded.<br>You might not receive your reward instantly";
+//document.getElementById("notification").innerHTML = "The faucet is currently overloaded.<br>You might not receive your reward instantly";
     function text(url) {
         return fetch(url).then(res => res.text());
     }
