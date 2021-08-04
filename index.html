@@ -119,12 +119,14 @@
             </div>
         </div>
     </div>
-    <hr style="width: 20%;">
+    <hr style="width: 20%;" id="tr">
 
 
 
+    <footer class="text-light" id="fs">
 
-    <footer class="text-light text-center text-lg-start">
+    </footer>
+    <footer class="text-light text-center text-lg-start" id="footer">
         <div class="text-center p-3 ">
             <p class="my-2 tb-0 h5">Made by MiranDaniel</p>
             <hr class="my-1 ty-0 hrBig">
@@ -135,6 +137,19 @@
     </footer>
 </body>
 <script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+if(document.documentElement.clientWidth<400){
+    document.getElementById("footer").style.opacity = 0;
+    document.getElementById("fs").innerHTML="<h4 class=\"my-0\">Made by MiranDaniel</h4><a class=\"text-light\"href=\"https://creeper.banano.cc/explorer/account/ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87/history\"><samp>Support me</samp></a>"
+}
+if(document.documentElement.clientWidth<330){
+    document.getElementById("footer").style.opacity = 0;
+    document.getElementById("tr").style.opacity = 0;
+    document.getElementById("fs").innerHTML="<p class=\"my-0\">Made by MiranDaniel</p><a class=\"text-light\"href=\"https://creeper.banano.cc/explorer/account/ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87/history\"><samp>Support me</samp></a>"
+}
+</script>
+
+
 <script>
     function verify() {
         if (grecaptcha && grecaptcha.getResponse().length > 0) {
@@ -248,9 +263,6 @@ ${grecaptcha.getResponse()}%0A
             rawFile.send(null);
         }
         readTextFile("tor.t");
-    
-    
-    
     </script>
     
 </html>
