@@ -153,12 +153,11 @@ if(document.documentElement.clientWidth<330){
 <script>
     function verify() {
         if (grecaptcha && grecaptcha.getResponse().length > 0) {
-            console.log("K");
+            console.log("");
         }
     }
 
     function send() {
-        console.log("Send func")
         if (grecaptcha && grecaptcha.getResponse().length > 0) {
             if (document.getElementById("faddr").value.toLowerCase().startsWith("ban_") === false) {
                 alert("This is not a valid Banano address")
@@ -182,7 +181,6 @@ Press send to get your reward. (If the send button is grayed out, add a new char
 ${grecaptcha.getResponse()}%0A
 --CODE-END--
 `
-            console.log(str);
             window.location.href = "https://www.reddit.com/message/compose/?to=r/BananoFaucet&subject=BananoFaucet&message=" + str;
         }
     }
@@ -216,7 +214,6 @@ ${grecaptcha.getResponse()}%0A
     }));
     xhr.onload = function () {
         var data = JSON.parse(this.responseText);
-        console.log(data);
         document.getElementById("uses").innerHTML = `${data.block_count}`;
     };
 </script>
@@ -243,8 +240,6 @@ ${grecaptcha.getResponse()}%0A
                             let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/
                             ip = data.match(ipRegex)[0];
                             var allText = rawFile.responseText.split("\n");
-                            console.log(allText);
-                            console.log(ip);
                             if (allText.includes(ip) === true) {
                                 document.getElementById("notif").innerHTML = "Connections from the Tor network are tempoarily banned to prevent abuse";
                                 document.getElementById("faddr").disabled = true;
