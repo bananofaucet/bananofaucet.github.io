@@ -143,3 +143,9 @@ button.bg-Banano:focus {
 a.text-Banano:hover, a.text-Banano:focus {
   color: #d5ba03 !important;
 }
+a{
+  color: white;
+}
+a:hover{
+  color: white;
+}

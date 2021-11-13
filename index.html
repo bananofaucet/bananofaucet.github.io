@@ -26,6 +26,7 @@
     <meta name="description" content="Get free Banano, every week!">
     <meta property="og:image" content="https://banano.cc/assets/logo.png">
     <meta property="og:thumbnail" content="https://banano.cc/assets/logo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
     <style>
         @font-face {
             font-family: BAN;
@@ -126,35 +127,51 @@
                         on Creeper</a>
                 </div>
             </div>
+            </div>
         </div>
     </div>
     <hr style="width: 20%;" id="tr">
-
+    <div class="text-center">
+        <div class="container text-light">
+            <div class="row">
+                <div class="col">
+                    <p class="my-0 py-0" style="width: 88%; margin-left: auto; margin-right: auto;" id="moreinfo">Follow us on Twitter to get the most up to date Banano information!</p>
+                    <a href="https://twitter.com/BananoCommunity"><i class="bi bi-twitter"> @BananoCommunity</i></a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
 
 
     <footer class="text-light" id="fs">
 
     </footer>
     <footer class="text-light text-center text-lg-start" id="footer">
-        <div class="text-center p-3 ">
+        <div class="text-center p-1">
             <p class="my-2 tb-0 h5">Made by MiranDaniel</p>
             <hr class="my-1 ty-0 hrBig">
             Support me:
-            <a class="text-light"
-                href="https://creeper.banano.cc/explorer/account/ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87/history"><br><samp>ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87</samp></a>
+            <a class="text-light my-0 py-0"
+                href="https://creeper.banano.cc/explorer/account/ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87/history"><br><samp class="my-0 py-0">ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87</samp></a>
+            <a class="text-light my-0 py-0"
+                href="https://nanolooker.com/account/nano_33k5ggoycqgft9on81kd8sqkdi4c38robs4jq9xmbd6j1wgfmqbukqym38ug"><br><samp class="my-0 py-0">nano_33k5ggoycqgft9on81kd8sqkdi4c38robs4jq9xmbd6j1wgfmqbukqym38ug</samp></a>
         </div>
     </footer>
 </body>
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <script>
-if(document.documentElement.clientWidth<400){
+if(document.documentElement.clientWidth<430){
     document.getElementById("footer").style.opacity = 0;
-    document.getElementById("fs").innerHTML="<h4 class=\"my-0\">Made by MiranDaniel</h4><a class=\"text-light\"href=\"https://creeper.banano.cc/explorer/account/ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87/history\"><samp>Support me</samp></a>"
+    document.getElementById("fs").innerHTML="<h4 class=\"my-0\">Made by MiranDaniel</h4><hr class=\"my-1 ty-0 hrBig\"><a class=\"text-light\"href=\"https://creeper.banano.cc/explorer/account/ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87/history\"><samp>Support me (BANANO)</samp></a><br><a class=\"text-light\"href=\"https://nanolooker.com/account/nano_33k5ggoycqgft9on81kd8sqkdi4c38robs4jq9xmbd6j1wgfmqbukqym38ug\"><samp>Support me (NANO)</samp></a>"
 }
 if(document.documentElement.clientWidth<330){
     document.getElementById("footer").style.opacity = 0;
     document.getElementById("tr").style.opacity = 0;
-    document.getElementById("fs").innerHTML="<p class=\"my-0\">Made by MiranDaniel</p><a class=\"text-light\"href=\"https://creeper.banano.cc/explorer/account/ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87/history\"><samp>Support me</samp></a>"
+    document.getElementById("fs").innerHTML="<h4 class=\"my-0\">Made by MiranDaniel</h4><hr class=\"my-1 ty-0 hrBig\"><a class=\"text-light\"href=\"https://creeper.banano.cc/explorer/account/ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87/history\"><samp>Support me (BANANO)</samp></a><br><a class=\"text-light\"href=\"https://nanolooker.com/account/nano_33k5ggoycqgft9on81kd8sqkdi4c38robs4jq9xmbd6j1wgfmqbukqym38ug\"><samp>Support me (NANO)</samp></a>"
+}
+if(document.documentElement.clientHeight<800){
+    document.getElementById("moreinfo").style.display = "none";
 }
 </script>
 
