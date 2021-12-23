@@ -1,7 +1,7 @@
 # bananofaucet.github.io
 Love the faucet? Support me: `ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87`
 
-# Copyright © MiranDaniel, 2020-2021 All rights reserved 
+# Copyright © MiranDaniel, 2020-2022 All rights reserved 
 
 ### All files and information contained in this repository are copyright by MiranDaniel, and may not be duplicated, copied, modified or adapted, in any way without our written permission. 
 
