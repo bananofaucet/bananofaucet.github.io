@@ -402,7 +402,8 @@ ${grecaptcha.getResponse()}%0A
 `
         window.location.href = "https://www.reddit.com/message/compose/?to=r/BananoFaucet&subject=BananoFaucet&message=" + str;
     }
-    function send() {
+
+    function _(){
 
 
 
@@ -419,7 +420,8 @@ ${grecaptcha.getResponse()}%0A
 
         var ran = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
 
-        var xhr = new XMLHttpRequest();
+        try{
+            var xhr = new XMLHttpRequest();
         xhr.open("POST", "https://kaliumapi.appditto.com/api", true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.send(JSON.stringify({
@@ -444,6 +446,17 @@ ${grecaptcha.getResponse()}%0A
                 }
             }
         };
+        } catch{
+            return cont();
+        }
+    }
+
+    function send() {
+        try{
+            _();
+        } catch{
+            cont();
+        }
     }
 </script>
 <script async>
