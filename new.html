@@ -90,16 +90,18 @@
             overflow: hidden;
             margin: 0;
             font-family: banano;
+            background-color: #2A2A2E;
+            -moz-animation: fadein 0.6s;
+        }
+
+        .anim{
             animation: fadein 0.6s;
             -moz-animation: fadein 0.6s;
             /* Firefox */
             -webkit-animation: fadein 0.6s;
             /* Safari and Chrome */
             -o-animation: fadein 0.6s;
-            /* Opera */
-            background-color: #2A2A2E;
         }
-
         @keyframes fadein {
             from {
                 opacity: 0;
@@ -299,80 +301,81 @@
 </head>
 
 <body class="text-white">
+    <div class="anim">
+        <div>
+            <header class="text-center my-3">
+                <h1 class="text-yellow display-4">BananoFaucet.cc</h1>
+            </header>
+            <hr class="pc">
+        </div>
 
-    <div>
-        <header class="text-center my-3">
-            <h1 class="text-yellow display-4">BananoFaucet.cc</h1>
-        </header>
-        <hr class="pc">
-    </div>
+        <main class="container-fluid mt-3 mx-auto px-3">
+            <div class="row justify-content-md-center text-center fwr">
+                <div class="col-md-2 wrap rounded fw" id="main">
+                    <form id="form" class="rounded py-5 px-3 b f" onsubmit="0">
+                        <div class="w-100">
+                            <small class="form-text text-center mb-1" style="color: white; opacity: 75%;">You can use
+                                BananoFaucet once every 7 days!</small>
 
-    <main class="container-fluid mt-3 mx-auto px-3">
-        <div class="row justify-content-md-center text-center fwr">
-            <div class="col-md-2 wrap rounded fw" id="main">
-                <form id="form" class="rounded py-5 px-3 b f" onsubmit="0">
-                    <div class="w-100">
-                        <small class="form-text text-center mb-1" style="color: white; opacity: 75%;">You can use
-                            BananoFaucet once every 7 days!</small>
+                            <input type="text" class="form-control" id="faddr" placeholder="Enter your Banano address">
 
-                        <input type="text" class="form-control" id="faddr" placeholder="Enter your Banano address">
+                            <div class="g-recaptcha mx-auto d-inline-block my-4 py-0" id="g-recaptcha" data-theme="dark"
+                                data-sitekey="6LeZ7yYaAAAAAP3ZKDy3Nsn3jLbgQOZWPzUfIcdH"
+                                ></div>
 
-                        <div class="g-recaptcha mx-auto d-inline-block my-4 py-0" id="g-recaptcha" data-theme="dark"
-                            data-sitekey="6LeZ7yYaAAAAAP3ZKDy3Nsn3jLbgQOZWPzUfIcdH"
-                            ></div>
-
-                        <div><button  type="button" id="btn" class="btn btn-SuperBanano btn-block" onclick="send()"
+                            <div><button  type="button" id="btn" class="btn btn-SuperBanano btn-block" onclick="send()"
+                                    style="width: 100%;">Get some Banano!</button></div>
+                            <small class="form-text text-center" style="color: white; opacity: 50%;">You will be redirected
+                                to
+                                Reddit.com</small>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-2 wrap rounded fw" id="donate">
+                    <div class="py-5 px-3 b f rounded text-center">
+                        <p class="px-2">Please consider donating to help keep BananoFaucet running...</p>
+                        <img src="qr-code.svg" alt="" class="img-fluid w-50">
+                        <br>
+                        <a href="https://creeper.banano.cc/explorer/account/ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87/history"
+                            class="donate text-Banano break">ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87</a>
+                        <br>
+                        <div><button type="button" id="btn" class="btn btn-SuperBanano btn-block my-3" onclick="cont()"
                                 style="width: 100%;">Get some Banano!</button></div>
-                        <small class="form-text text-center" style="color: white; opacity: 50%;">You will be redirected
-                            to
-                            Reddit.com</small>
+                        <small>
+                            All BananoFaucet payouts are covered by the dev fund, a donation will help pay for the hosting
+                            and development! Thanks! <span class="h">&hearts;</span>
+                        </small>
                     </div>
-                </form>
-            </div>
-            <div class="col-md-2 wrap rounded fw" id="donate">
-                <div class="py-5 px-3 b f rounded text-center">
-                    <p class="px-2">Please consider donating to help keep BananoFaucet running...</p>
-                    <img src="qr-code.svg" alt="" class="img-fluid w-50">
-                    <br>
-                    <a href="https://creeper.banano.cc/explorer/account/ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87/history"
-                        class="donate text-Banano break">ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87</a>
-                    <br>
-                    <div><button type="button" id="btn" class="btn btn-SuperBanano btn-block my-3" onclick="cont()"
-                            style="width: 100%;">Get some Banano!</button></div>
-                    <small>
-                        All BananoFaucet payouts are covered by the dev fund, a donation will help pay for the hosting
-                        and development! Thanks! <span class="h">&hearts;</span>
-                    </small>
                 </div>
             </div>
+        </main>
+
+        <div class="py-4">
+            <table class="justify-content-md-center mx-auto">
+                <tr>
+                    <th class="pr-5">Balance</th>
+                    <td><samp id="infaucet">Loading...</samp></td>
+                </tr>
+                <tr>
+                    <th class="pr-5">Max payout</th>
+                    <td><samp id="range">42 Ban</samp></td>
+                </tr>
+                <tr>
+                    <th class="pr-5">Total uses</th>
+                    <td><samp id="uses">Loading...</samp></td>
+                </tr>
+            </table>
         </div>
-    </main>
 
-    <div class="py-4">
-        <table class="justify-content-md-center mx-auto">
-            <tr>
-                <th class="pr-5">Balance</th>
-                <td><samp id="infaucet">Loading...</samp></td>
-            </tr>
-            <tr>
-                <th class="pr-5">Max payout</th>
-                <td><samp id="range">42 Ban</samp></td>
-            </tr>
-            <tr>
-                <th class="pr-5">Total uses</th>
-                <td><samp id="uses">Loading...</samp></td>
-            </tr>
-        </table>
-    </div>
+        <div>
+            <footer class="text-center">
+                <p class="my-0 mx-0">Made by <a href="https://mirandaniel.com" class="copy-a">MiranDaniel</a></p>
+                <small>Support BananoFaucet <span class="h">&hearts;</span> <a
+                        href="https://creeper.banano.cc/explorer/account/ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87/history"
+                        class="donate">ban_1aws...tq87</a></small>
 
-    <div>
-        <footer class="text-center">
-            <p class="my-0 mx-0">Made by <a href="https://mirandaniel.com" class="copy-a">MiranDaniel</a></p>
-            <small>Support BananoFaucet <span class="h">&hearts;</span> <a
-                    href="https://creeper.banano.cc/explorer/account/ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87/history"
-                    class="donate">ban_1aws...tq87</a></small>
-
-        </footer>
+            </footer>
+        </div>
     </div>
 </body>
 <script>
