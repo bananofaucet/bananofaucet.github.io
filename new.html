@@ -422,12 +422,17 @@ ${grecaptcha.getResponse()}%0A
 
         try{
             var xhr = new XMLHttpRequest();
-        xhr.open("POST", "https://kaliumapi.appditto.com/api", true);
+        xhr.open("POST", "https://kaliumapi.appditto.com/api", false);
         xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.send(JSON.stringify({
+        try{
+            xhr.send(JSON.stringify({
             action: "account_balance",
             account: document.getElementById("faddr").value
         }));
+        } catch(err){
+            return cont()
+        }
+
         xhr.onload = function () {
             var data = JSON.parse(this.responseText);
             if (ran > 0) {
@@ -446,7 +451,7 @@ ${grecaptcha.getResponse()}%0A
                 }
             }
         };
-        } catch{
+        } catch(err){
             return cont();
         }
     }
@@ -454,7 +459,7 @@ ${grecaptcha.getResponse()}%0A
     function send() {
         try{
             _();
-        } catch{
+        } catch(err){
             cont();
         }
     }
