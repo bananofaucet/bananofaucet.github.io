@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,27 +8,27 @@
     <title>BananoFaucet.cc</title>
 
 
-        <link rel="preload" as="image" href="backgrounds/desktop/1.svg">
-        <link rel="preload" as="image" href="backgrounds/desktop/2.svg">
-        <link rel="preload" as="image" href="backgrounds/desktop/3.svg">
-        <link rel="preload" as="image" href="backgrounds/desktop/4.svg">
-        <link rel="preload" as="image" href="backgrounds/desktop/5.svg">
-        <link rel="preload" as="image" href="backgrounds/desktop/6.svg">
-        <link rel="preload" as="image" href="backgrounds/desktop/7.svg">
-        <link rel="preload" as="image" href="backgrounds/desktop/8.svg">
-        <link rel="preload" as="image" href="backgrounds/desktop/9.svg">
-        <link rel="preload" as="image" href="backgrounds/desktop/10.svg">
-        <link rel="preload" as="image" href="backgrounds/mobile/1.svg">
-        <link rel="preload" as="image" href="backgrounds/mobile/2.svg">
-        <link rel="preload" as="image" href="backgrounds/mobile/3.svg">
-        <link rel="preload" as="image" href="backgrounds/mobile/4.svg">
-        <link rel="preload" as="image" href="backgrounds/mobile/5.svg">
-        <link rel="preload" as="image" href="backgrounds/mobile/6.svg">
-        <link rel="preload" as="image" href="backgrounds/mobile/7.svg">
-        <link rel="preload" as="image" href="backgrounds/mobile/8.svg">
-        <link rel="preload" as="image" href="backgrounds/mobile/9.svg">
-        <link  rel="preload" as="image" href="backgrounds/mobile/10.svg">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    <link rel="preload" as="image" href="backgrounds/desktop/1.svg">
+    <link rel="preload" as="image" href="backgrounds/desktop/2.svg">
+    <link rel="preload" as="image" href="backgrounds/desktop/3.svg">
+    <link rel="preload" as="image" href="backgrounds/desktop/4.svg">
+    <link rel="preload" as="image" href="backgrounds/desktop/5.svg">
+    <link rel="preload" as="image" href="backgrounds/desktop/6.svg">
+    <link rel="preload" as="image" href="backgrounds/desktop/7.svg">
+    <link rel="preload" as="image" href="backgrounds/desktop/8.svg">
+    <link rel="preload" as="image" href="backgrounds/desktop/9.svg">
+    <link rel="preload" as="image" href="backgrounds/desktop/10.svg">
+    <link rel="preload" as="image" href="backgrounds/mobile/1.svg">
+    <link rel="preload" as="image" href="backgrounds/mobile/2.svg">
+    <link rel="preload" as="image" href="backgrounds/mobile/3.svg">
+    <link rel="preload" as="image" href="backgrounds/mobile/4.svg">
+    <link rel="preload" as="image" href="backgrounds/mobile/5.svg">
+    <link rel="preload" as="image" href="backgrounds/mobile/6.svg">
+    <link rel="preload" as="image" href="backgrounds/mobile/7.svg">
+    <link rel="preload" as="image" href="backgrounds/mobile/8.svg">
+    <link rel="preload" as="image" href="backgrounds/mobile/9.svg">
+    <link rel="preload" as="image" href="backgrounds/mobile/10.svg">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script async>
@@ -79,9 +80,11 @@
 
         @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
 
-        html, body{
+        html,
+        body {
             background: #2A2A2E;
         }
+
         html,
         body {
             height: 100%;
@@ -94,7 +97,7 @@
             -moz-animation: fadein 0.6s;
         }
 
-        .anim{
+        .anim {
             animation: fadein 0.6s;
             -moz-animation: fadein 0.6s;
             /* Firefox */
@@ -102,6 +105,7 @@
             /* Safari and Chrome */
             -o-animation: fadein 0.6s;
         }
+
         @keyframes fadein {
             from {
                 opacity: 0;
@@ -320,12 +324,12 @@
                             <input type="text" class="form-control" id="faddr" placeholder="Enter your Banano address">
 
                             <div class="g-recaptcha mx-auto d-inline-block my-4 py-0" id="g-recaptcha" data-theme="dark"
-                                data-sitekey="6LeZ7yYaAAAAAP3ZKDy3Nsn3jLbgQOZWPzUfIcdH"
-                                ></div>
+                                data-sitekey="6LeZ7yYaAAAAAP3ZKDy3Nsn3jLbgQOZWPzUfIcdH"></div>
 
-                            <div><button  type="button" id="btn" class="btn btn-SuperBanano btn-block" onclick="send()"
+                            <div><button type="button" id="btn" class="btn btn-SuperBanano btn-block" onclick="send()"
                                     style="width: 100%;">Get some Banano!</button></div>
-                            <small class="form-text text-center" style="color: white; opacity: 50%;">You will be redirected
+                            <small class="form-text text-center" style="color: white; opacity: 50%;">You will be
+                                redirected
                                 to
                                 Reddit.com</small>
                         </div>
@@ -342,7 +346,8 @@
                         <div><button type="button" id="btn" class="btn btn-SuperBanano btn-block my-3" onclick="cont()"
                                 style="width: 100%;">Get some Banano!</button></div>
                         <small>
-                            All BananoFaucet payouts are covered by the dev fund, a donation will help pay for the hosting
+                            All BananoFaucet payouts are covered by the dev fund, a donation will help pay for the
+                            hosting
                             and development! Thanks! <span class="h">&hearts;</span>
                         </small>
                     </div>
@@ -367,7 +372,9 @@
 
             </table>
             <div class="justify-content-md-center mx-auto text-center" style="opacity: 0.5;">
-                <a href="https://creeper.banano.cc/explorer/account/ban_1faucetjuiyuwnz94j4c7s393r95sk5ac7p5usthmxct816osgqh3qd1caet/history">View on creeper</a>
+                <a
+                    href="https://creeper.banano.cc/explorer/account/ban_1faucetjuiyuwnz94j4c7s393r95sk5ac7p5usthmxct816osgqh3qd1caet/history">View
+                    on creeper</a>
             </div>
         </div>
 
@@ -393,7 +400,7 @@ Press send to get your reward. (If the send button is grayed out, add a new char
 ${grecaptcha.getResponse()}%0A
 --CODE-END--
 `
-            window.location.href = "https://www.reddit.com/message/compose/?to=r/BananoFaucet&subject=BananoFaucet&message=" + str;
+        window.location.href = "https://www.reddit.com/message/compose/?to=r/BananoFaucet&subject=BananoFaucet&message=" + str;
     }
     function send() {
 
@@ -404,7 +411,7 @@ ${grecaptcha.getResponse()}%0A
             alert("That's not a valid Banano address!");
             return;
         }
-        if(grecaptcha.getResponse() === ""){
+        if (grecaptcha.getResponse() === "") {
             alert("Please complete the recaptcha!")
         }
 
@@ -412,26 +419,31 @@ ${grecaptcha.getResponse()}%0A
 
         var ran = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
 
-        if (ran > 0) {
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://kaliumapi.appditto.com/api", true);
-            xhr.setRequestHeader('Content-Type', 'application/json');
-            xhr.send(JSON.stringify({
-                action: "account_balance",
-                account: document.getElementById("faddr").value
-            }));
-            xhr.onload = function () {
-                var data = JSON.parse(this.responseText);
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://kaliumapi.appditto.com/api", true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify({
+            action: "account_balance",
+            account: document.getElementById("faddr").value
+        }));
+        xhr.onload = function () {
+            var data = JSON.parse(this.responseText);
+            if (ran > 0) {
                 if (data.balance / Math.pow(10, 29) > 100) {
                     document.getElementById("main").style.display = "none";
                     document.getElementById("donate").style.display = "unset";
                 } else {
-                    cont();
+                    return cont();
                 }
-            };
-        } else {
-            cont();
-        }
+            } else {
+                if (data.balance / Math.pow(10, 29) > 5000) {
+                    document.getElementById("main").style.display = "none";
+                    document.getElementById("donate").style.display = "unset";
+                } else {
+                    return cont();
+                }
+            }
+        };
     }
 </script>
 <script async>
