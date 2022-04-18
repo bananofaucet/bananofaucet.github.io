@@ -1,4 +1,0 @@
-This is a Brave Rewards publisher verification file.
-
-Domain: bananofaucet.cc
-Token: ff9d155862007fe0e3967a1fa7ea00e29f1cca995ef84af35512fe0950c0513e

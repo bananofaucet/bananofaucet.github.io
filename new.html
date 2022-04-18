@@ -184,9 +184,6 @@
             padding: 0;
         }
 
-        .donate:hover {
-            color: rgb(255, 0, 0);
-        }
 
         footer {
             position: fixed;
@@ -199,8 +196,10 @@
             opacity: 0.6;
         }
 
-        footer:hover {
+        footer .sf:hover,
+        .donate:hover {
             opacity: 1;
+            color: black;
         }
 
         .h {
@@ -243,7 +242,8 @@
         }
 
 
-        table {
+        table,
+        .view-on-creeper {
             text-shadow: -1px -1px 1px #2A2A2E, 1px -1px 1px #2A2A2E, -1px 1px 1px #2A2A2E, 1px 1px 1px #2A2A2E;
         }
 
@@ -276,6 +276,12 @@
         .break {
             overflow: scroll;
             word-break: break-all;
+        }
+        .view-on-creeper a{
+            opacity: 0.75;
+        }
+        .view-on-creeper a:hover{
+            opacity: 1;
         }
     </style>
     <noscript>
@@ -371,7 +377,7 @@
                 </tr>
 
             </table>
-            <div class="justify-content-md-center mx-auto text-center" style="opacity: 0.5;">
+            <div class="justify-content-md-center mx-auto text-center view-on-creeper">
                 <a
                     href="https://creeper.banano.cc/explorer/account/ban_1faucetjuiyuwnz94j4c7s393r95sk5ac7p5usthmxct816osgqh3qd1caet/history">View
                     on creeper</a>
@@ -380,8 +386,8 @@
 
         <div>
             <footer class="text-center">
-                <p class="my-0 mx-0">Made by <a href="https://mirandaniel.com" class="copy-a">MiranDaniel</a></p>
-                <small>Support BananoFaucet <span class="h">&hearts;</span> <a
+                <p class="my-0 mx-0">Made by <a href="https://mirandaniel.com" class="copy-a sf">MiranDaniel</a></p>
+                <small>Support BananoFaucet <span class="h sf">&hearts;</span> <a
                         href="https://creeper.banano.cc/explorer/account/ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87/history"
                         class="donate">ban_1aws...tq87</a></small>
 
@@ -404,62 +410,60 @@ ${grecaptcha.getResponse()}%0A
     }
 
     function _(){
-
-
-
-
         if (/^(ban)_[13]{1}[13456789abcdefghijkmnopqrstuwxyz]{59}$/.test(document.getElementById("faddr").value) === false) {
             alert("That's not a valid Banano address!");
             return;
         }
         if (grecaptcha.getResponse() === "") {
-            alert("Please complete the recaptcha!")
+            alert("Please complete the recaptcha!");
+            return;
         }
 
 
 
-        var ran = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
+        //var ran = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
+        let ran = 5;
 
-        try{
+        try {
             var xhr = new XMLHttpRequest();
-        xhr.open("POST", "https://kaliumapi.appditto.com/api", false);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        try{
-            xhr.send(JSON.stringify({
-            action: "account_balance",
-            account: document.getElementById("faddr").value
-        }));
-        } catch(err){
-            return cont()
-        }
-
-        xhr.onload = function () {
-            var data = JSON.parse(this.responseText);
-            if (ran > 0) {
-                if (data.balance / Math.pow(10, 29) > 100) {
-                    document.getElementById("main").style.display = "none";
-                    document.getElementById("donate").style.display = "unset";
-                } else {
-                    return cont();
-                }
-            } else {
-                if (data.balance / Math.pow(10, 29) > 5000) {
-                    document.getElementById("main").style.display = "none";
-                    document.getElementById("donate").style.display = "unset";
-                } else {
-                    return cont();
-                }
+            xhr.open("POST", "https://kaliumapi.appditto.com/api", true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            try {
+                xhr.send(JSON.stringify({
+                    action: "account_balance",
+                    account: document.getElementById("faddr").value
+                }));
+            } catch (err) {
+                return cont()
             }
-        };
-        } catch(err){
+
+            xhr.onload = function () {
+                var data = JSON.parse(this.responseText);
+                if (ran > 0) {
+                    if (data.balance / Math.pow(10, 29) > 100) {
+                        document.getElementById("main").style.display = "none";
+                        document.getElementById("donate").style.display = "unset";
+                    } else {
+                        return cont();
+                    }
+                } else {
+                    if (data.balance / Math.pow(10, 29) > 5000) {
+                        document.getElementById("main").style.display = "none";
+                        document.getElementById("donate").style.display = "unset";
+                    } else {
+                        return cont();
+                    }
+                }
+            };
+        } catch (err) {
             return cont();
         }
     }
 
     function send() {
-        try{
+        try {
             _();
-        } catch(err){
+        } catch (err) {
             cont();
         }
     }
