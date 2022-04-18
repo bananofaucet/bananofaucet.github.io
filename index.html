@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BananoFaucet.cc</title>
-
-
+    
     <link rel="preload" as="image" href="backgrounds/desktop/1.svg">
     <link rel="preload" as="image" href="backgrounds/desktop/2.svg">
     <link rel="preload" as="image" href="backgrounds/desktop/3.svg">
@@ -28,6 +27,7 @@
     <link rel="preload" as="image" href="backgrounds/mobile/8.svg">
     <link rel="preload" as="image" href="backgrounds/mobile/9.svg">
     <link rel="preload" as="image" href="backgrounds/mobile/10.svg">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -73,12 +73,49 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
     <style>
+        @keyframes fadein {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @-moz-keyframes fadein {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fadein {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @-o-keyframes fadein {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+
         @font-face {
             font-family: banano;
             src: url(banano.ttf);
         }
-
-        @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
 
         html,
         body {
@@ -92,12 +129,12 @@
             padding: 0;
             overflow: hidden;
             margin: 0;
-            font-family: banano;
+            font-family: banano,monospace;
             background-color: #2A2A2E;
             -moz-animation: fadein 0.6s;
         }
 
-        .anim {
+        .main-animation-body {
             animation: fadein 0.6s;
             -moz-animation: fadein 0.6s;
             /* Firefox */
@@ -106,85 +143,20 @@
             -o-animation: fadein 0.6s;
         }
 
-        @keyframes fadein {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @-moz-keyframes fadein {
-
-            /* Firefox */
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @-webkit-keyframes fadein {
-
-            /* Safari and Chrome */
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @-o-keyframes fadein {
-
-            /* Opera */
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
         .text-yellow {
             color: #FBDD11;
         }
 
-        .hr-small {
-            width: 30%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hr {
-            border-top: 0.2vh solid #FBDD11;
-            border-radius: 25px;
-            width: 30rem;
-            opacity: 1;
-        }
-
-        .copy-a {
+        .alink,
+        .monospace{
             color: #2A2A2E;
-        }
-
-        .copy-a:hover {
-            color: #212124;
-        }
-
-        .donate {
-            color: #2A2A2E;
-            font-family: "Ubuntu Mono";
+            font-family: "Ubuntu Mono",monospace;
             margin: 0;
             padding: 0;
         }
-
-
+        .alink:hover {
+            color: #212124;
+        }
         footer {
             position: fixed;
             left: 0;
@@ -195,31 +167,21 @@
             mix-blend-mode: darken;
             opacity: 0.6;
         }
-
-        footer .sf:hover,
-        .donate:hover {
+        footer .sf:hover{
             opacity: 1;
             color: black;
         }
-
-        .h {
-            color: palevioletred;
-        }
-
         .wrap {
-            padding: 1rem;
             position: relative;
             background: linear-gradient(to bottom, #FBDD11, #4CBF4B);
             padding: 4px;
             border-radius: 15px !important;
         }
-
         .b {
             background: #2A2A2E;
             color: white;
             border-radius: 12px !important;
         }
-
         th {
             display: flex;
             flex-direction: row;
@@ -227,52 +189,40 @@
             justify-content: flex-start;
             padding-right: 20px;
         }
-
         td {
             text-align: right;
         }
-
         .g-recaptcha {
             height: 80px !important;
         }
-
         .fwr,
         .fw {
             min-width: 350px !important;
         }
-
-
         table,
         .view-on-creeper {
             text-shadow: -1px -1px 1px #2A2A2E, 1px -1px 1px #2A2A2E, -1px 1px 1px #2A2A2E, 1px 1px 1px #2A2A2E;
         }
-
         @media only screen and (max-width: 500px) {
             .pc {
                 display: unset;
             }
         }
-
         @media only screen and (min-width: 500px) {
             .pc {
                 display: none;
             }
         }
-
         main {
             padding: 0 !important;
         }
-
         #donate {
             display: none;
             animation: fadein 1s;
             -moz-animation: fadein 1s;
-            /* Firefox */
             -webkit-animation: fadein 1s;
-            /* Safari and Chrome */
             -o-animation: fadein 1s;
         }
-
         .break {
             overflow: scroll;
             word-break: break-all;
@@ -288,16 +238,14 @@
         <style>
             @media only screen and (max-width: 500px) {
                 body {
-                    background: #2A2A2E url("backgrounds/mobile/1.svg") bottom center;
-                    background-repeat: repeat-x;
+                    background: #2A2A2E url("backgrounds/mobile/1.svg") repeat-x bottom center;
                     background-size: 100%;
                 }
             }
 
             @media only screen and (min-width: 500px) {
                 body {
-                    background: #2A2A2E url("backgrounds/desktop/1.svg") bottom center;
-                    background-repeat: repeat-x;
+                    background: #2A2A2E url("backgrounds/desktop/1.svg") repeat-x bottom center;
                     background-size: 100%;
                 }
             }
@@ -311,7 +259,7 @@
 </head>
 
 <body class="text-white">
-    <div class="anim">
+    <div class="main-animation-body">
         <div>
             <header class="text-center my-3">
                 <h1 class="text-yellow display-4">BananoFaucet.cc</h1>
@@ -347,7 +295,7 @@
                         <img src="qr-code.svg" alt="" class="img-fluid w-50">
                         <br>
                         <a href="https://creeper.banano.cc/explorer/account/ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87/history"
-                            class="donate text-Banano break">ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87</a>
+                            class="monospace text-Banano break">ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87</a>
                         <br>
                         <div><button type="button" id="btn" class="btn btn-SuperBanano btn-block my-3" onclick="cont()"
                                 style="width: 100%;">Get some Banano!</button></div>
@@ -386,10 +334,10 @@
 
         <div>
             <footer class="text-center">
-                <p class="my-0 mx-0">Made by <a href="https://mirandaniel.com" class="copy-a sf">MiranDaniel</a></p>
-                <small>Support BananoFaucet <span class="h sf">&hearts;</span> <a
+                <p class="my-0 mx-0">Made by <a href="https://mirandaniel.com" class="alink sf">MiranDaniel</a></p>
+                <small>Support BananoFaucet <span>&hearts;</span> <a
                         href="https://creeper.banano.cc/explorer/account/ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87/history"
-                        class="donate">ban_1aws...tq87</a></small>
+                        class="alink sf">ban_1aws...tq87</a></small>
 
             </footer>
         </div>
