@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BananoFaucet.cc</title>
-    
+
     <link rel="preload" as="image" href="backgrounds/desktop/1.svg">
     <link rel="preload" as="image" href="backgrounds/desktop/2.svg">
     <link rel="preload" as="image" href="backgrounds/desktop/3.svg">
@@ -46,7 +46,7 @@
                 $(document).ready(function () {
                     $("body").css(
                         {
-                            background: "#2A2A2E url(backgrounds/mobile/" + rnd + ".svg) bottom center repeat-x",
+                            background: "#2A2A2E url(backgrounds/mobile/" + rnd + ".svg) fixed bottom no-repeat",
                             backgroundSize: "100%"
 
                         }
@@ -56,7 +56,7 @@
                 $(document).ready(function () {
                     $("body").css(
                         {
-                            background: "#2A2A2E url(backgrounds/desktop/" + rnd + ".svg) bottom center repeat-x",
+                            background: "#2A2A2E url(backgrounds/desktop/" + rnd + ".svg) fixed bottom no-repeat",
                             backgroundSize: "100%"
 
                         }
@@ -77,6 +77,7 @@
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
@@ -86,6 +87,7 @@
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
@@ -95,6 +97,7 @@
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
@@ -104,6 +107,7 @@
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
@@ -117,21 +121,19 @@
             src: url(banano.ttf);
         }
 
-        html,
-        body {
-            background: #2A2A2E;
-        }
+
 
         html,
         body {
             height: 100%;
             width: 100%;
             padding: 0;
-            overflow: hidden;
             margin: 0;
-            font-family: banano,monospace;
-            background-color: #2A2A2E;
+            font-family: banano, monospace;
             -moz-animation: fadein 0.6s;
+            background-repeat: no-repeat !important;
+            background-attachment:scroll;
+            background-position: center;
         }
 
         .main-animation-body {
@@ -148,15 +150,17 @@
         }
 
         .alink,
-        .monospace{
+        .monospace {
             color: #2A2A2E;
-            font-family: "Ubuntu Mono",monospace;
+            font-family: "Ubuntu Mono", monospace;
             margin: 0;
             padding: 0;
         }
+
         .alink:hover {
             color: #212124;
         }
+
         footer {
             position: fixed;
             left: 0;
@@ -167,21 +171,25 @@
             mix-blend-mode: darken;
             opacity: 0.6;
         }
-        footer .sf:hover{
+
+        footer .sf:hover {
             opacity: 1;
             color: black;
         }
+
         .wrap {
             position: relative;
             background: linear-gradient(to bottom, #FBDD11, #4CBF4B);
             padding: 4px;
             border-radius: 15px !important;
         }
+
         .b {
             background: #2A2A2E;
             color: white;
             border-radius: 12px !important;
         }
+
         th {
             display: flex;
             flex-direction: row;
@@ -189,33 +197,41 @@
             justify-content: flex-start;
             padding-right: 20px;
         }
+
         td {
             text-align: right;
         }
+
         .g-recaptcha {
             height: 80px !important;
         }
+
         .fwr,
         .fw {
             min-width: 350px !important;
         }
+
         table,
         .view-on-creeper {
             text-shadow: -1px -1px 1px #2A2A2E, 1px -1px 1px #2A2A2E, -1px 1px 1px #2A2A2E, 1px 1px 1px #2A2A2E;
         }
+
         @media only screen and (max-width: 500px) {
             .pc {
                 display: unset;
             }
         }
+
         @media only screen and (min-width: 500px) {
             .pc {
                 display: none;
             }
         }
+
         main {
             padding: 0 !important;
         }
+
         #donate {
             display: none;
             animation: fadein 1s;
@@ -223,14 +239,26 @@
             -webkit-animation: fadein 1s;
             -o-animation: fadein 1s;
         }
+
         .break {
             overflow: scroll;
             word-break: break-all;
         }
-        .view-on-creeper a{
+
+        .view-on-creeper a {
             opacity: 0.75;
         }
-        .view-on-creeper a:hover{
+
+        .view-on-creeper a:hover {
+            opacity: 1;
+        }
+
+        #cat {
+            opacity: 0.75;
+
+        }
+
+        #cat:hover {
             opacity: 1;
         }
     </style>
@@ -308,7 +336,21 @@
                 </div>
             </div>
         </main>
-
+        <div class="container-fluid mt-3 mx-auto px-3">
+            <div id="cat" class="col-md-2 wrap rounded fw mx-auto mt-1">
+                <div class="rounded py-2 px-3 b f">
+                    <div class="w-100">
+                        <small>Switch to the CatGirl representative!</small>
+                        <small><code
+                                style="color: rgb(244, 255, 181); opacity: 95%;">ban_3catgir1p6b1edo5trp7fdb8gsxx4y5ffshbphj73zzy5hu678rsry7srh8b</code></small>
+                        <br>
+                        <small><a href="https://mirandaniel.com/catgirl">More information</a></small>
+                        <br>
+                        <small><sup>Does this increase rewards? Maybe&trade;</sup></small>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="py-4">
             <table class="justify-content-md-center mx-auto">
                 <tr>
@@ -331,7 +373,7 @@
                     on creeper</a>
             </div>
         </div>
-
+        <p class="my-3 py-0">&nbsp;</p>
         <div>
             <footer class="text-center">
                 <p class="my-0 mx-0">Made by <a href="https://mirandaniel.com" class="alink sf">MiranDaniel</a></p>
@@ -357,7 +399,7 @@ ${grecaptcha.getResponse()}%0A
         window.location.href = "https://www.reddit.com/message/compose/?to=r/BananoFaucet&subject=BananoFaucet&message=" + str;
     }
 
-    function _(){
+    function _() {
         if (/^(ban)_[13]{1}[13456789abcdefghijkmnopqrstuwxyz]{59}$/.test(document.getElementById("faddr").value) === false) {
             alert("That's not a valid Banano address!");
             return;
