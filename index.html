@@ -8,7 +8,7 @@
     <title>BananoFaucet.cc</title>
 
     <style>
-        html, body{backgroud-color: rgb(42, 42, 46);}
+        html, body{background-color: rgb(42, 42, 46);}
     </style>
     
     <link rel="preload" as="image" href="backgrounds/desktop/1.svg">
@@ -135,10 +135,11 @@
             margin: 0;
             font-family: banano, monospace;
             -moz-animation: fadein 0.6s;
+            animation: fadein 0.6s;
             background-repeat: no-repeat !important;
             background-attachment:scroll;
             background-position: center;
-            backgroud-color: rgb(42, 42, 46);
+            background-color: rgb(42, 42, 46);
         }
 
         .main-animation-body {
@@ -391,6 +392,11 @@
         </div>
     </div>
 </body>
+<script>
+    let searchParams = new URLSearchParams(window.location.search)
+    let param = searchParams.get('addrs')
+    document.getElementById("faddr").value = param;
+</script>
 <script>
     function cont() {
         var str = `Please send me some Banano.%0A
