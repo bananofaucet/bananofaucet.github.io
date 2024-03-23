@@ -2,7 +2,7 @@
 Source code for the BananoFaucet.cc website
 
 ```
-Copyright 2021-2022 MiranDaniel
+Copyright 2021-2024 MiranDaniel
 
 
 The Software is provided to you by the Licensor under

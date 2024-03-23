@@ -8,7 +8,10 @@
     <title>BananoFaucet.cc</title>
 
     <style>
-        html, body{background-color: rgb(42, 42, 46);}
+        html {background-color: rgb(42, 42, 46);}
+        body {
+            min-height: 100vh;
+        }
     </style>
 
     <link rel="preload" as="image" href="backgrounds/desktop/1.svg">
@@ -129,10 +132,8 @@
 
         html,
         body {
-            height: 100%;
-            width: 100%;
-            padding: 0;
-            margin: 0;
+            padding: 0 !important;
+            margin: 0 !important;
             font-family: banano, monospace;
             -moz-animation: fadein 0.6s;
             animation: fadein 0.6s;
@@ -140,6 +141,13 @@
             background-attachment:scroll;
             background-position: center;
             background-color: rgb(42, 42, 46);
+        }
+
+        body {
+            position: absolute;
+            left: 0;
+            top:0;
+            width: 100%;
         }
 
         .main-animation-body {
@@ -176,7 +184,7 @@
             color: #2A2A2E;
             mix-blend-mode: darken;
             opacity: 1;
-            font-size: 1.35rem;
+            font-size: 1rem;
         }
 
         footer .sf:hover {
@@ -324,23 +332,6 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-md-2 wrap rounded fw" id="donate">
-                    <div class="py-5 px-3 b f rounded text-center">
-                        <p class="px-2">Please consider donating to help keep BananoFaucet running...</p>
-                        <img src="qr-code.svg" alt="" class="img-fluid w-50">
-                        <br>
-                        <a href="https://creeper.banano.cc/explorer/account/ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87/history"
-                            class="monospace text-Banano break">ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87</a>
-                        <br>
-                        <div><button type="button" id="btn" class="btn btn-SuperBanano btn-block my-3" onclick="cont()"
-                                style="width: 100%;">Get some Banano!</button></div>
-                        <small>
-                            All BananoFaucet payouts are covered by the dev fund, a donation will help pay for the
-                            hosting
-                            and development! Thanks! <span class="h">&hearts;</span>
-                        </small>
-                    </div>
-                </div>
             </div>
         </main>
         <!--<div class="container-fluid mt-3 mx-auto px-3">
@@ -384,10 +375,6 @@
         <div>
             <footer class="text-center">
                 <p class="my-0 mx-0">Made by <a href="https://mirandaniel.com" class="alink sf">MiranDaniel</a></p>
-                <small>Support BananoFaucet <span>&hearts;</span> <a
-                        href="https://creeper.banano.cc/explorer/account/ban_1aws637mb3qnuf9j8swzufq3nj3fttuzkixbd817nmmhyms6a6kt1zyptq87/history"
-                        class="alink sf">ban_1aws...tq87</a></small>
-
             </footer>
         </div>
     </div>
@@ -412,6 +399,13 @@ ${grecaptcha.getResponse()}%0A
     }
 
     function _() {
+        let addr = document.getElementById("faddr");
+        addr.value = addr.value.trim();
+        if(addr.value == "ban_1faucetjuiyuwnz94j4c7s393r95sk5ac7p5usthmxct816osgqh3qd1caet") {
+            addr.value = "";
+            alert("You can't use the faucet address as your own address!");
+            return;
+        }
         if (/^(ban)_[13]{1}[13456789abcdefghijkmnopqrstuwxyz]{59}$/.test(document.getElementById("faddr").value) === false) {
             alert("That's not a valid Banano address!");
             return;
@@ -421,51 +415,14 @@ ${grecaptcha.getResponse()}%0A
             return;
         }
 
-
-
-        //var ran = Math.floor(Math.random() * (1 - 0 + 1)) + 0;
-        let ran = 5;
-
-        try {
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://kaliumapi.appditto.com/api", true);
-            xhr.setRequestHeader('Content-Type', 'application/json');
-            try {
-                xhr.send(JSON.stringify({
-                    action: "account_balance",
-                    account: document.getElementById("faddr").value
-                }));
-            } catch (err) {
-                return cont()
-            }
-
-            xhr.onload = function () {
-                var data = JSON.parse(this.responseText);
-                if (ran > 0) {
-                    if (data.balance / Math.pow(10, 29) > 100) {
-                        document.getElementById("main").style.display = "none";
-                        document.getElementById("donate").style.display = "unset";
-                    } else {
-                        return cont();
-                    }
-                } else {
-                    if (data.balance / Math.pow(10, 29) > 5000) {
-                        document.getElementById("main").style.display = "none";
-                        document.getElementById("donate").style.display = "unset";
-                    } else {
-                        return cont();
-                    }
-                }
-            };
-        } catch (err) {
-            return cont();
-        }
+        return cont();
     }
 
     function send() {
         try {
             _();
         } catch (err) {
+            console.error(err)
             cont();
         }
     }
